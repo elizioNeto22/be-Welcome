@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
+import {Route, Switch, Link} from 'react-router-dom'
+
+import HomePage from './pages/homepage/homepage-component'
+import ShopPage from './pages/shop/shopPage-component'
+import Header from './components/header/header-component'
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+class App extends React.Component {
+
+  NoMatch = () =>(
+    <div>
+      <h1>Página não Encontrada</h1>
+      <Link to='/'>Home</Link>
+    </div>)
+
+  render() {
+    return (
+      <div className="master-container">
+        <Header />
+        <Switch>
+          <Route exact path='/' component={HomePage} />
+          <Route path='/shop' component={ShopPage} />
+          <Route component={this.NoMatch} />
+        </Switch>
+  
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
