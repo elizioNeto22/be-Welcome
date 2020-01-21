@@ -2,11 +2,10 @@
 
 const SECTIONS_DATA = [
   {
-      title: 'chair',
-      price: 180,
+      title: 'chairs',
       imageUrl: 'imgs/homepage/chair-homepage.jpg', // local file in public/images/
       id: 1,
-      linkUrl: 'shop/chair',
+      linkUrl: 'shop/chairs',
       size: 'small'
 
   },
@@ -25,7 +24,7 @@ const SECTIONS_DATA = [
       size: 'small'
   },
   {
-      title: 'plant pot',
+      title: 'plant pots',
       imageUrl: 'imgs/homepage/plant-pot-homepage.jpg', // local file in public/images/
       id: 4,
       linkUrl: 'shop/plant-pots',
