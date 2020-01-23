@@ -2,6 +2,12 @@
 
 .master-container {
   max-width: 100vw;
+  max-height: 100%;
   display: flex;
   justify-content: space-between;
+  // background: linear-gradient(rgba(0, 0, 0, 0.100), rgba(0,0,0,0.100)) , url(./white-wood.jpg);
+  // background: url(./nordwood-themes-KcsKWw77Ovw-unsplash.jpg);
+  // background-size: cover;
+  background-position: center center;
+  // background-repeat: no-repeat;
 }

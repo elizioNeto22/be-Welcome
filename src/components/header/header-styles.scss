@@ -1,11 +1,14 @@
+
 .header-container {
   display: flex;
   flex-direction: column;
   max-width: 30%;
-  padding: 60px 75px;
+  height: 100vh;
+  padding: 50px 75px;
   margin: 0;
-  // justify-content: space-between;
-
+  justify-content: space-between;
+  align-items: flex-start;
+  
   .logo {
     background-image: url(../../assets/icons/logo.png);
     width: 137px;
@@ -13,16 +16,22 @@
     background-position: center;
     background-size: cover;
   }
+  
 
   .nav-bar {
-
+    display: flex;
+    flex-direction: column;
     .nav-option {
-
+      padding: 20px 0px;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
     }
   }
 
   .btn-group {
-
+    display: flex;
+    flex-direction: column;
     .header-button-discount {}
     .header-button-new {}
   }

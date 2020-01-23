@@ -17,8 +17,10 @@ const Header = () => (
     </div>
 
     <div className="btn-group">
-      <CustomButton className="sign-in-discount" type="button" title="Sign In"/>
-      <CustomButton className="header-button-new" type="button" title="New This Week"/>
+      <Link to="/signin">
+        <CustomButton className="sign-in-discount" type="button" >Sign In</CustomButton>
+      </Link>
+      <CustomButton className="header-button-new" type="button" >New This Week</CustomButton>
     </div>
 
   </div>

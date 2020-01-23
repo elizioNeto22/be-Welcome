@@ -1,7 +1,7 @@
 import React from 'react'
 
-const CustomButton = ({className, type, title}) => (
-  <button className={className} type={type}>{title}</button>
+const CustomButton = ({children, handleClick, ...otherProps}) => (
+  <button onClick={() => handleClick} {...otherProps}>{children}</button>
 )
 
 export default CustomButton
