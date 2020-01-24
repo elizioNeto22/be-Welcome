@@ -32,8 +32,10 @@
   .btn-group {
     display: flex;
     flex-direction: column;
-    .header-button-discount {}
-    .header-button-new {}
+    
+    .sign-button {
+      cursor: pointer;
+    }
   }
 }
 

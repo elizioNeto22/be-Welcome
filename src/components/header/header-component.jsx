@@ -1,11 +1,11 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-
+import {userSignOut} from '../../firebase/firebase.utils'
 import CustomButton from '../custom-button/customButton-component' 
 
 import './header-styles.scss'
 
-const Header = () => (
+const Header = ({currentUser}) => (
   <div className="header-container">
 
     <Link to="/" className="logo" />
@@ -17,10 +17,12 @@ const Header = () => (
     </div>
 
     <div className="btn-group">
-      <Link to="/signin">
-        <CustomButton className="sign-in-discount" type="button" >Sign In</CustomButton>
-      </Link>
-      <CustomButton className="header-button-new" type="button" >New This Week</CustomButton>
+      {
+        currentUser ? 
+        <div className="sign-button" onClick={() => userSignOut()}>SIGN OUT</div> :
+        <Link className="sign-button" to="signin">SIGN IN</Link>
+      }
+      <CustomButton className="sign-button" type="button" >New This Week</CustomButton>
     </div>
 
   </div>

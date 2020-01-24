@@ -83,8 +83,10 @@ class SignInForm extends React.Component {
             value={this.state.remember}
             handleChange={this.handleChange}
           />
-          <CustomButton className="login" type="submit">LOG IN</CustomButton>
-          <CustomButton className="login" onClick={signInWithGoogle} >Sign in with Google</CustomButton>
+          <div className="buttons">
+            <CustomButton  type="submit">LOG IN</CustomButton>
+            <CustomButton onClick={signInWithGoogle} isGoogleSignIn>Sign in with Google</CustomButton>
+          </div>
         </form>
       </div>
     )

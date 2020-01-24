@@ -16,15 +16,21 @@ const config = {
 }
 
 firebase.initializeApp(config)
-export const auth = firebase.auth()
-export const firestore = firebase.firestore()
+const auth = firebase.auth()
+const firestore = firebase.firestore()
 
 
 const provider = new firebase.auth.GoogleAuthProvider()
-
 provider.setCustomParameters({'propmt': 'select_account)'}) // 1
+const signInWithGoogle = () => auth.signInWithPopup(provider) // 2
+const userSignOut = () => auth.signOut()
 
-export const signInWithGoogle = () => auth.signInWithPopup(provider) // 2
+export {
+  auth,
+  firestore,
+  signInWithGoogle,
+  userSignOut
+}
 
 export default firebase
 

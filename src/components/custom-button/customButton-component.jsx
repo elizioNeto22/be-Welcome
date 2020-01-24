@@ -1,7 +1,8 @@
 import React from 'react'
 
-const CustomButton = ({children, handleClick, ...otherProps}) => (
-  <button onClick={() => handleClick} {...otherProps}>{children}</button>
+import './custom-button-styles.scss'
+const CustomButton = ({children, isGoogleSignIn, handleClick, ...otherProps}) => (
+  <button className={`${isGoogleSignIn ? 'google-sign-in' : 'custom-button'}`} onClick={() => handleClick} {...otherProps}>{children}</button>
 )
 
 export default CustomButton
