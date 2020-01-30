@@ -18,11 +18,17 @@ const Header = ({currentUser}) => (
 
     <div className="btn-group">
       {
-        currentUser ? 
-        <div className="sign-button" onClick={() => userSignOut()}>SIGN OUT</div> :
-        <Link className="sign-button" to="signin">SIGN IN</Link>
+        currentUser 
+          ? 
+        <CustomButton className="sign-button" type="button" onClick={userSignOut}>SIGN OUT</CustomButton>
+          :
+        <Link className="sign-button" to="/signin">
+          <CustomButton className="sign-button" type="button" >SIGN IN</CustomButton>
+        </Link>
       }
-      <CustomButton className="sign-button" type="button" >New This Week</CustomButton>
+      <Link to="/signin">
+        <CustomButton className="sign-button" type="button" >SIGN UP</CustomButton>
+      </Link>
     </div>
 
   </div>
