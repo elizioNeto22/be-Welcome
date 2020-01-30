@@ -1,9 +1,15 @@
 import React from 'react'
 
-import SignInForm from '../../components/signIn-form/signIn-form-component'
+import SignInForm from '../../components/signIn/signIn-component'
+import SignUpForm from '../../components/signUp/signUp-component'
+
+import './sign-page-styles.scss'
 
 const SignPage = () => (
-  <SignInForm />
+  <div className="sign-page-container">
+    <SignInForm />
+    <SignUpForm />
+  </div>
 )
 
 export default SignPage 
