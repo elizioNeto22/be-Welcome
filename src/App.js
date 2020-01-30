@@ -6,7 +6,7 @@ import ShopPage from './pages/shop/shopPage-component'
 import ProductPage from './pages/product-page/productPage-component'
 import Header from './components/header/header-component'
 import SignPage from './pages/sign-page/sign-page-component'
-import {auth} from './firebase/firebase.utils'
+import {auth, addUserToDatabase} from './firebase/firebase.utils'
 
 import './App.scss';
 
@@ -23,8 +23,21 @@ class App extends React.Component {
   unsubscribeFromAuth = null
 
   componentDidMount(){
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      this.setState({currentUser: user})
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+      if(userAuth) {
+        const userRef = await addUserToDatabase(userAuth)
+        
+        userRef.onSnapshot(snapShot => {
+          this.setState({currentUser: {
+            id: snapShot.id,
+            ...snapShot.data()
+          }})
+          console.log(this.state)
+        })
+      }
+      else {
+        this.setState({currentUser: userAuth})
+      }
     })
   }
 
@@ -40,7 +53,6 @@ class App extends React.Component {
 
 
   render() {
-    console.log(this.state.currentUser)
     const section = 'title'
     const product = 'product'
     return (
@@ -48,9 +60,8 @@ class App extends React.Component {
         <Header currentUser={this.state.currentUser}/>
         <Switch>
           <Route exact path='/' render={() => <HomePage />}/>
-          {/* <Route exact path='/' render={(props) => <ShopPage {...props} />}/> */}
           <Route exact path={`/shop/:${section}`} render={() => <ShopPage />} />
-          <Route path={`/shop/:${section}/:${product}`} component={ProductPage} />
+          <Route path={`/shop/:${section}/:${product}`} render={() => <ProductPage />} />
           <Route exact path={`/signin`} render={() => <SignPage />} />
           <Route component={this.NoMatch} />
         </Switch>
