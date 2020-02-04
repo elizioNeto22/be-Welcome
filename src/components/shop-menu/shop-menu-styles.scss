@@ -1,0 +1,174 @@
+.shop-menu {
+  display: flex;
+  flex-direction: column;
+  width: 13vw;
+  margin: 0;
+  background-color: #f1f1f1a2;
+  padding: 50px 40px;
+  align-items: flex-start;
+  
+  .tab-check {
+    position: absolute;    
+    opacity: 0;
+    z-index: -1;
+  }
+
+  // Main Styles
+  .menu-title {
+    border-bottom: 1px solid #131212;
+    border-bottom: 1px solid #fbb710;
+    width: 8vw;
+    font-style: italic;
+    margin-top: 70px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    display: block;
+  }
+  .types-title {
+    border-bottom: 1px solid #131212;
+    border-bottom: 1px solid #fbb710;
+    width: 8vw;
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 20px;
+    font-weight: bold;
+    display: block;
+  }
+  .types-menu {
+    
+    ul {
+      list-style: none;
+      a{
+        display: block;
+        text-decoration: none;
+        padding: 10px 0px;
+        color: #606060;
+        &:hover {
+          color: #fbb710;
+        }
+      }
+    }
+  }
+
+  .brands-menu {
+    .input-brands-menu{
+      margin-bottom: 25px;
+      margin-right: 10px;
+    }
+  }
+
+  .colors-menu {
+    
+    ul {
+      display: flex;
+      list-style: none;
+      flex-direction: row;
+      flex-wrap: wrap;
+      .circle-colors-menu {
+        cursor: pointer;
+        margin: 0px 15px 10px 0px;
+        width: 27px;
+        height: 27px;
+        border-radius: 50%;
+        &:nth-of-type(1){background-color: #fff;}
+        &:nth-of-type(2){background-color: #969696;}
+        &:nth-of-type(3){background-color: #030303;}
+        &:nth-of-type(4){background-color: #0315ff;}
+        &:nth-of-type(5){background-color: #dc0647;}
+        &:nth-of-type(6){background-color: #fff56a;}
+        &:nth-of-type(7){background-color: #f26e51;}
+        &:nth-of-type(8){background-color: #c43cb8;}
+      }
+    }
+  }
+  .slider-menu {
+    width: 100%;
+    .slider {
+      -webkit-appearance: none;
+      margin: 18px 0px 5px 0px ;
+      width: 100%;
+      &:focus {
+        outline: none;
+      }
+      &::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 8.4px;
+        cursor: pointer;
+        box-shadow: 1.5px 1.5px 1.5px #131212, 0px 0px 1.5px #131212;
+        background: #fbb710;
+        border-radius: 1.3px;
+        border: 2px solid #131212;
+      }
+      &::-webkit-slider-thumb {
+        box-shadow: 1px 1px 1px #131212, 0px 0px 1px #131212;
+        border: 2px solid #131212;
+        height: 25px;
+        width: 8px;
+        border-radius: 3px;
+        background: #e9a702;
+        cursor: pointer;
+        -webkit-appearance: none;
+        margin-top: -14px;
+      }
+      &:focus::-webkit-slider-runnable-track {
+        background: #367ebd;
+      }
+      &::-moz-range-track {
+        width: 100%;
+        height: 8.4px;
+        cursor: pointer;
+        box-shadow: 1.5px 1.5px 1.5px #131212, 0px 0px 1.5px #131212;
+        background: #fbb710;
+        border-radius: 1.3px;
+        border: 2px solid #131212;
+      }
+      &::-moz-range-thumb {
+        box-shadow: 1px 1px 1px #131212, 0px 0px 1px #131212;
+        border: 2px solid #131212;
+        height: 25px;
+        width: 8px;
+        border-radius: 3px;
+        background: #e9a702;
+        cursor: pointer;
+      }
+      &::-ms-track {
+        width: 100%;
+        height: 8.4px;
+        cursor: pointer;
+        background: transparent;
+        border-color: transparent;
+        border-width: 16px 0;
+        color: transparent;
+      }
+      &::-ms-fill-lower {
+        box-shadow: 1.5px 1.5px 1.5px #131212, 0px 0px 1.5px #131212;
+        background: #fbb710;
+        border-radius: 1.3px;
+        border: 2px solid #131212;
+      }
+      &::-ms-fill-upper {
+        box-shadow: 1.5px 1.5px 1.5px #131212, 0px 0px 1.5px #131212;
+        background: #fbb710;
+        border-radius: 1.3px;
+        border: 2px solid #131212;
+      }
+      &::-ms-thumb {
+        box-shadow: 1px 1px 1px #131212, 0px 0px 1px #131212;
+        border: 2px solid #131212;
+        height: 25px;
+        width: 8px;
+        border-radius: 3px;
+        background: #e9a702;
+        cursor: pointer;
+      }
+    }
+    h4 {
+      margin-bottom: 0px;
+      font-weight: bold;
+    }
+    span {
+      font-size: 12px;
+    }
+  }
+}
