@@ -1,23 +1,38 @@
+
 .sign-in {
+  width: 30vw;
+  text-align: center;
+  margin: auto auto;
   h3 {
     font-size: 26px;
-    // font-weight: 700;
-    margin-bottom: 10px
   }
   form {
-    margin-top: 80px;
+    margin: 50px 0px 15px 0px;
+    
+    .custom-button{
+      width: 70%;
+      margin-top: 10px;
+      padding: 18px 50px
+    }
+    input {
+      border: 0px solid transparent;
+      border-bottom: 1px solid#ddd;
+      border-radius: 0;
+      margin: 10px;
+      width: 80%;
+      height: calc(1.5em + .75rem + 2px);
+      padding: .375rem .75rem;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color:#495057;
+    }
   }
-  input[type="text"], input[type="password"] {
-    border: 0px solid transparent;
-    border-bottom: 1px solid#ddd;
-    border-radius: 0;
-    // display: block;
-    width: 100%;
-    height: calc(1.5em + .75rem + 2px);
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color:#495057;
+
+  h5 {
+    a {
+      text-decoration: none;
+      color: #fbb710;
+    }
   }
 }

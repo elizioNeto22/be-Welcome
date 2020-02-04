@@ -85,11 +85,11 @@ class SignUpForm extends React.Component {
             placeholder="Confirm Password"
             required
           />
-          <CustomButton type="submit" children="SIGN UP" />
+          <CustomButton className="custom-button" type="submit" children="SIGN UP" />
         </form>
-        <h6>If you already have an account,<br/>
+        <h5>If you already have an account,<br/>
           <Link to='/signin'>Sing in here.</Link>
-        </h6>
+        </h5>
       </div>
     )
   }
