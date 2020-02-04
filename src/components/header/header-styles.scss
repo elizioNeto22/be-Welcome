@@ -1,13 +1,40 @@
+@mixin transparent-button ($btn) {
+  @if $btn == 'signIn' or $btn == 'signOut'{
+    border: 2px solid $dark-black;
+    &:hover {
+      background-color: $dark-black;
+      color: $white-text;
+      // transition-property: hover;
+      transition-timing-function: ease;
+      transition-duration: 0.5s;
+    }
+  }
+  @else {
+    border: 2px solid $yellow;
+    &:hover {
+      background-color: $hover-color;
+      color: $dark-black;
+      // transition-property: hover;
+      transition-timing-function: ease;
+      transition-duration: 0.5s;
+    }
+  }
+
+}
+
+@import '../../assets//styles/colors';
 
 .header-container {
   display: flex;
   flex-direction: column;
-  max-width: 30%;
+  // width: 15vw;
   height: 100vh;
-  padding: 50px 75px;
+  padding: 50px 30px 50px 90px;
   margin: 0;
   justify-content: space-between;
   align-items: flex-start;
+  position: sticky;
+  top: 0;
   
   .logo {
     background-image: url(../../assets/icons/logo.png);
@@ -21,21 +48,103 @@
   .nav-bar {
     display: flex;
     flex-direction: column;
-    .nav-option {
-      padding: 20px 0px;
-      text-decoration: none;
-      color: #000;
-      font-weight: bold;
-    }
+
+      .nav-option {
+        padding: 20px 0;
+        font-size: 1.25rem;
+        text-decoration: none;
+        color: $dark-black;
+        // font-weight: bold;
+        position: relative;
+
+          &:hover{
+            color: $hover-color;
+            // left: 2.5%;
+            transition-duration: 0.4s;
+            
+            &::before {
+                z-index: 10;
+                content: '';
+                // margin-top: 8px;
+                width: 30px;
+                height: 3px;
+                position: absolute;
+                top: 47%;
+                left: -35%;
+                background-color: $yellow;
+              }
+          }
+    }    
   }
 
   .btn-group {
     display: flex;
     flex-direction: column;
     
+    .glyphicon-adjust{
+      width: 30px;
+      height: 30px;
+      color: $dark-black;
+    }
+    .fa-facebook{
+      color:blue;
+      background-color:tomato;
+      height: 50px;
+      width: 50px;
+    }
+
     .sign-button {
       cursor: pointer;
-      font-family: 'Lusitana';
+      overflow: hidden;
+      font-size: 18px;
+      margin: 0px 0px 15px;
+      padding: 0px 7px;
+      border: none;
+      height: 55px;
+      width: 160px;
+      background-color: transparent;
+      color: $dark-black;
+    }
+
+    .sign-IN-button {
+      @include transparent-button('signIn');
+    }
+    
+    .sign-UP-button {
+      @include transparent-button('signUp')
+    }
+    
+    .sign-OUT-button {}
+  }
+
+  .nav-icons {
+    margin: 0px 5px;
+    ul {
+      // text-align: ;
+      .icon {
+        padding: 15px 5px;
+        &:hover {
+          cursor: pointer;
+          color: $hover-color;
+          transition-duration: 0.37s;
+          .cart-count {color: #131212;}
+        }
+      }
+      .icon-cart {
+        list-style-position: inside;
+        list-style-image: url('../../assets/icons/cart.png');
+        list-style-type: disc;
+      }
+      .icon-fav {
+        list-style-position: inside;
+        list-style-image: url('../../assets/icons/favorites.png');
+        list-style-type: disc;
+      }
+      .icon-search {
+        list-style-position: inside;
+        list-style-image: url('../../assets/icons/search.png');
+        list-style-type: disc;
+      }
     }
   }
 }
