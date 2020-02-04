@@ -1,21 +1,10 @@
 .shopPage-container {
   display: flex;
-  max-width: 100%;
-  
-  .shop-menu {
-    width: 100%;
-    ul {
-      display: flex;
-      flex-direction: column;
-    }
-  }
-
-
+  width: 80vw;
+  justify-content: space-around;
   .select {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 }
-
-// #f5f7fa
