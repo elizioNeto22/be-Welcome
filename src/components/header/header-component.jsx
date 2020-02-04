@@ -28,7 +28,7 @@ const Header = ({currentUser}) => (
           <CustomButton className="sign-button sign-IN-button" type="button" >SIGN IN</CustomButton>
         </Link>
       }
-      <Link to="/signin">
+      <Link to="/signup">
         <CustomButton className="sign-button sign-UP-button" type="button" >SIGN UP</CustomButton>
       </Link>
     </div>
