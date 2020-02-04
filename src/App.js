@@ -1,12 +1,14 @@
 import React from 'react';
 import {Route, Switch, Link} from 'react-router-dom'
+import {auth, addUserToDatabase} from './firebase/firebase.utils'
 
+
+import Header from './components/header/header-component'
 import HomePage from './pages/homepage/homepage-component'
 import ShopPage from './pages/shop/shopPage-component'
 import ProductPage from './pages/product-page/productPage-component'
-import Header from './components/header/header-component'
-import SignPage from './pages/sign-page/sign-page-component'
-import {auth, addUserToDatabase} from './firebase/firebase.utils'
+import SignInForm from './pages/sign-in/sign-in-component'
+import SignUpForm from './pages/sign-up/sign-up-component'
 
 import './App.scss';
 
@@ -62,7 +64,8 @@ class App extends React.Component {
           <Route exact path='/' render={() => <HomePage />}/>
           <Route exact path={`/shop/:${section}`} render={() => <ShopPage />} />
           <Route path={`/shop/:${section}/:${product}`} render={() => <ProductPage />} />
-          <Route exact path={`/signin`} render={() => <SignPage />} />
+          <Route exact path={`/signin`} render={() => <SignInForm />} />
+          <Route exact path={`/signup`} render={() => <SignUpForm />} />
           <Route component={this.NoMatch} />
         </Switch>
   
