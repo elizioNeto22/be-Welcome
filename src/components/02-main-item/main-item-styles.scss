@@ -1,131 +1,50 @@
 @mixin imgName ($name) {
   @if $name == chairs{
-    width: 500px;
-    height: 500px;
-    grid-area: 1/ 1 / 2 / 2;
-    margin:0px 0px 5px 0px;
-  }
-  @else if $name == lamps{
-    width:250px;
-    height: 250px;
-    grid-area: 1 / 2 / 2 / 3;
-    margin: 0px 0px 0px 0px;
-  }
-  @else if $name == pillows{
-    width:250px;
-    height: 250px;
-    grid-area :1 / 3 / 2 / 4;
-    margin: 0px 0px 0px 5px;
+    grid-column:  span 2;
+    grid-row:  span 2;
   }
   @else if $name == plant-pots {
-    width: 500px;
-    height: 250px;
-    grid-area: 1 / 2 / 2 / 4;
-    align-self: flex-end;
-    margin: 5px 0px 5px 0px;
+    grid-column:  span 2;
+    grid-row:  span 1;
   }
   @else if $name == shelfs{
-    width: 500px;
-    height: 500px;
-    grid-area: 2 / 1 / 3 / 2;
-    margin: 5px 0px 5px 0px;
+    grid-column:  span 2;
+    grid-row:  span 2;
   }
-  @else if $name == side-tables{
-    width:250px;
-    height: 250px;
-    grid-area:2 / 2 / 3 / 3;
-    margin: 5px 0px 0px 0px;
-  }
-  @else if $name == sofas{
-    width:250px;
-    height: 250px;
-    grid-area:2 / 3 / 3 / 4;
-    margin:5px 0px 0px 5px;
-  }
-  @else if $name == beds{
-    width:250px;
-    height: 250px;
-    grid-area:2 / 2 / 3 / 3;
-    align-self: flex-end;
-  }
-  @else if $name == home-deco{
-    width:250px;
-    height: 250px;
-    grid-area:2 / 3 / 3 / 4;
-    align-self: flex-end;
-    margin: 0px 0px 0px 5px;
+  @else {
+    grid-column:  span 1;
+    grid-row:  span 1;
   }
 }
-
-@mixin imgSize ($size) {
-  @if $size == small{
-    width:240px;
-    height: 240px;
-  }
-  @else if $size == medium {
-    width: 495px;
-    height: 250px;
-  }
-  @else if $size == large{
-    width: 490px;
-    height: 500px;
-  }
-}
-
-
-
-@import "../../assets/styles/colors";
-
 
 .menu-item {
   &.chairs {@include imgName(chairs);}
-  &.lamps {@include imgName(lamps);}
-  &.pillows {@include imgName(pillows);}
   &.plant-pots {@include imgName(plant-pots);}
-  &.shelfs{@include imgName(shelfs)}
-  &.side-tables{@include imgName(side-tables)}
-  &.sofas{@include imgName(sofas)}
-  &.beds{@include imgName(beds)}
-  &.home-deco{@include imgName(home-deco)}
+  &.shelfs{@include imgName(shelfs);}
+  @include imgName(others);
+  overflow: hidden;
 
+  &:hover{
+    cursor: pointer;
+    & .menu-item-info {
+      color: #ffffff;
+      transition-property: color;
+      transition-duration: 0.5s;
+    }
+    & .menu-item-image {
+      transform: scale(1.07);
+      transition: transform 10s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    }
+  }
   
   .menu-item-image {    
-    &.small {@include imgSize(small)}
-    &.medium {@include imgSize(medium)}
-    .large {@include imgSize(large)}
-    width: 490px;
-    height: 500px;
+    width: 100%;
+    height: 100%;
     background-position: center;
     background-size: cover;
-    &:hover{
-      cursor: pointer;
-        transform: scale(1.1);
-        transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
-        opacity: 0.97;
-        box-shadow: inset 0 0 0 100vw rgba(0, 0, 0, 0.100);
-    }
   }
-
-
   .menu-item-info {
-    color: #fff;
-    // color: #000;
-    // padding-top: 30px; 
+    color: #000000;
     padding: 30px 0px 0px 30px; 
-    .info-line{
-      width: 80px;
-      height: 3px;
-      margin-bottom: 10px;
-      background-color: $yellow;
-    }
-    p {
-      margin-bottom: 0px;
-      margin-top: 0px;
-    }
-    h2 {
-      margin: 0;
-    }
   }
 }
-
-
