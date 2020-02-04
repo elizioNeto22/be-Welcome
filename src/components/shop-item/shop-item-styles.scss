@@ -2,16 +2,11 @@
 
 .shop-item {
   background-color: #ffffff;
-  // para telas giga
-  // width: 600px;
-  // height: 850px;
-  width: 415px;
-  height: 615px;
   margin: 15px 30px 15px 0px;
 
   .shop-item-img {
     width: 100%;
-    height: 520px;
+    height: 80%;
     background-position: center;
     background-size: cover;
   }
@@ -23,7 +18,6 @@
     margin: 20px 0 0px 0;
 
     .shop-item-info-text {
-
       .info-line{
         width: 80px;
         height: 3px;
@@ -40,7 +34,6 @@
         font-size: 16px;
         margin: 0;
       }
-
     }
 
     .shop-item-features {
@@ -56,7 +49,6 @@
       .rating {
         display: flex;
         margin-bottom: 5px;
-
         .star {
           width: 15px;
           height: 15px;
