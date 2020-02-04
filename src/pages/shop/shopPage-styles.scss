@@ -1,0 +1,10 @@
+.shopPage-container {
+  display: flex;
+  width: 80vw;
+  justify-content: space-around;
+  .select {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
