@@ -13,8 +13,6 @@ class SignInForm extends React.Component {
     this.state = {
       username: '',
       password: '',
-      remember: true,
-      isLogged: '',
     }
   }
 
@@ -24,9 +22,8 @@ class SignInForm extends React.Component {
   }
 
   handleChange = (e) => {
-    const {name,value, type, checked} = e.target
-    type === 'checkbox' ? this.setState({remember: checked})
-    : this.setState({[name]: value})
+    const {name,value} = e.target
+    this.setState({[name]: value})
   }
 
   render(){
@@ -56,20 +53,14 @@ class SignInForm extends React.Component {
             handleChange={this.handleChange}
           />
 
-          <CustomInput 
-            name="remember"
-            type="checkbox"
-            value={this.state.remember}
-            handleChange={this.handleChange}
-          />
           <div className="buttons">
             <CustomButton  type="submit">LOG IN</CustomButton>
             <CustomButton onClick={signInWithGoogle} isGoogleSignIn>Sign in with Google</CustomButton>
           </div>
         </form>
-        <h6>Need to create an account?,<br/>
+        <h5>Need to create an account?<br/>
           <Link to='/signup'>Sign up here.</Link>
-        </h6>
+        </h5>
       </div>
     )
   }
