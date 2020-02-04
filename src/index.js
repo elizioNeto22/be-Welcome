@@ -5,7 +5,7 @@ import './index.scss';
 import App from './App';
 
 ReactDOM.render(
-  <BrowserRouter basename="/https://be-welcome.netlify.com">
+  <BrowserRouter basename="/">
     <App />
   </BrowserRouter>,
     document.getElementById('root')
