@@ -13,6 +13,53 @@
     z-index: -1;
   }
 
+  // .tab {
+  //   overflow: hidden;
+  //   width: 100%;
+  //   margin-top: 50px;
+  //   &-label {
+  //     display: flex;
+  //     justify-content: space-between;
+  //     font-weight: bold;
+  //     padding: 16px;
+  //     margin: 0;
+  //     background: transparent;
+  //     border-bottom: 2px solid #131212;
+  //     cursor: pointer;
+  //     &:hover {
+  //       transition-duration: 0.5s;
+  //       transition-timing-function: ease;
+  //       border: 1px solid #fbb710;
+  //     }
+  //     &::after {
+  //       content: "\276F";
+  //       width: 15px;
+  //       height: 25px;
+  //       transition: all .35s;
+  //     }
+  //   }
+  //   &-content {
+  //     max-height: 0;
+  //     // padding: 10px 0px;
+  //     color: #606060;
+  //     transition: all .35s;
+  //   }
+  // }
+
+  // .tab-check:checked {
+  //   + .tab-label {
+  //     border: 2px solid #fbb710;
+  //     &::after {
+  //       transform: rotate(90deg)
+  //     }
+  //   }
+  //   ~ .tab-content {
+  //     max-height: 100vh;
+  //     padding: 10px 0px;
+  //   }
+  // }
+
+
   // Main Styles
   .menu-title {
     border-bottom: 1px solid #131212;
