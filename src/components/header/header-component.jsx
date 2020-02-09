@@ -9,12 +9,48 @@ import '../custom-button/custom-button-styles.scss'
 const Header = ({currentUser}) => (
   <div className="header-container">
 
-    <Link to="/" className="logo" />
+    {/* Responsive menu */}
+    <div className="hamburger-container">
+      <input class="menu-trigger hidden" id="togglenav" type="checkbox" />
+      <label class="burger-wrapper" for="togglenav">
+        <div class="hamburger">
+          <div className="tab-content">
+            <ul>
+              <li><Link to="/">HOME</Link></li>
+              {/* <li><Link  to="/cart">CART</Link></li> */}
+              <li><Link  to="/checkout">CHECKOUT</Link></li>
+              
+              { 
+                currentUser 
+                  ? 
+                  <li className="sign-button sign-OUT-button" onClick={userSignOut}>
+                    SIGN OUT
+                  </li>
+                  :
+                  <li className="sign-button sign-IN-button">
+                    <Link to="/signin">SIGN IN</Link>
+                  </li>
+              }
+                <li className="sign-button sign-UP-button">
+                  <Link to="/signup">SIGN UP</Link>
+                </li>
 
+                <li className="icon icon-cart"><Link to="/cart">CART<span className='cart-count'>(0)</span></Link></li>
+                <li className="icon icon-fav"><Link to="/">FAVOURITE</Link></li>
+                <li className="icon icon-search"><Link to="/">SEARCH</Link></li>
+            </ul>
+          </div>
+        </div>
+      </label>
+    </div>
+      
+
+    {/* Desktop / Tablet menu */}
+    <Link to="/" className="logo"/>
     {/* Transformar esse nav em um component (posso reusar com os icones mais abaixo)*/}
     <div className="nav-bar" style={{listStyle: 'none'}}>
         <Link className="nav-option" to="/">HOME</Link>
-        <Link className="nav-option" to="/cart">CART</Link>
+        {/* <Link className="nav-option" to="/cart">CART</Link> */}
         <Link className="nav-option" to="/checkout">CHECKOUT</Link>
     </div>
 

@@ -6,7 +6,10 @@ import CustomInput from '../customInput/custom-input-component'
 import './shop-menu-styles.scss'
 
 const ShopMenu = ({collection, renderCollection, history}) => {
-  
+  let colorCircles = []
+  for(let i = 0; i < 8; i++) {
+    colorCircles.push(<li className="circle-colors-menu" />)
+  }
   return (
     <div className="shop-menu">
       <div className="types-menu tab">
@@ -72,14 +75,7 @@ const ShopMenu = ({collection, renderCollection, history}) => {
         <label className="tab-label menu-title" for="tab-check-colors">Colors</label>
         <div className="tab-content">
           <ul>
-            <li className="circle-colors-menu" />
-            <li className="circle-colors-menu" />
-            <li className="circle-colors-menu" />
-            <li className="circle-colors-menu" />
-            <li className="circle-colors-menu" />
-            <li className="circle-colors-menu" />
-            <li className="circle-colors-menu" />
-            <li className="circle-colors-menu" />
+            {colorCircles.map(item => (item))}
           </ul>
         </div>
       </div>

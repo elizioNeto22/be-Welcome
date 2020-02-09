@@ -1,3 +1,6 @@
+@import '../../assets/styles/responsive';
+
+
 .shopPage-container {
   display: flex;
   width: 80vw;
@@ -6,5 +9,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+}
+
+
+
+// Mobile
+
+@include breakpoint('mobile') {
+  .shopPage-container {
+    width: 100vw;
   }
 }

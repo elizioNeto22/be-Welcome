@@ -7,8 +7,8 @@ import Header from './components/header/header-component'
 import HomePage from './pages/homepage/homepage-component'
 import ShopPage from './pages/shop/shopPage-component'
 import ProductPage from './pages/product-page/productPage-component'
-import SignInForm from './pages/sign-in/sign-in-component'
-import SignUpForm from './pages/sign-up/sign-up-component'
+import SignInForm from './pages/sign-in/sign-in-page'
+import SignUpForm from './pages/sign-up/sign-up-page'
 
 import './App.scss';
 

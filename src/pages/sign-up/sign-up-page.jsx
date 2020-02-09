@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 import CustomButton from '../../components/custom-button/customButton-component'
 import CustomInput from '../../components/customInput/custom-input-component'
 
-import './sign-up-styles.scss'
+import './sign-up-page-styles.scss'
 
 class SignUpForm extends React.Component {
   constructor(props) {
@@ -58,7 +58,7 @@ class SignUpForm extends React.Component {
             name="displayName"
             value={displayName}
             handleChange={this.handleChange}
-            placeholder="User Name"
+            label="username"
             required
           />
           <CustomInput 
@@ -66,7 +66,7 @@ class SignUpForm extends React.Component {
             name="email"
             value={email}
             handleChange={this.handleChange}
-            placeholder="Email"
+            label="email"
             required
           />
           <CustomInput 
@@ -74,7 +74,7 @@ class SignUpForm extends React.Component {
             name="password"
             value={password}
             handleChange={this.handleChange}
-            placeholder="Password"
+            label="password"
             required
           />
           <CustomInput 
@@ -82,7 +82,7 @@ class SignUpForm extends React.Component {
             name="confirmPassword"
             value={confirmPassword}
             handleChange={this.handleChange}
-            placeholder="Confirm Password"
+            label="confirm password"
             required
           />
           <CustomButton className="custom-button" type="submit" children="SIGN UP" />

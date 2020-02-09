@@ -1,3 +1,5 @@
+@import '../../assets/styles/_responsive';
+
 .shop-menu {
   display: flex;
   flex-direction: column;
@@ -6,67 +8,20 @@
   background-color: #f1f1f1a2;
   padding: 50px 40px;
   align-items: flex-start;
-  
   .tab-check {
     position: absolute;    
     opacity: 0;
     z-index: -1;
   }
-
-  // .tab {
-  //   overflow: hidden;
-  //   width: 100%;
-  //   margin-top: 50px;
-  //   &-label {
-  //     display: flex;
-  //     justify-content: space-between;
-  //     font-weight: bold;
-  //     padding: 16px;
-  //     margin: 0;
-  //     background: transparent;
-  //     border-bottom: 2px solid #131212;
-  //     cursor: pointer;
-  //     &:hover {
-  //       transition-duration: 0.5s;
-  //       transition-timing-function: ease;
-  //       border: 1px solid #fbb710;
-  //     }
-  //     &::after {
-  //       content: "\276F";
-  //       width: 15px;
-  //       height: 25px;
-  //       transition: all .35s;
-  //     }
-  //   }
-  //   &-content {
-  //     max-height: 0;
-  //     // padding: 10px 0px;
-  //     color: #606060;
-  //     transition: all .35s;
-  //   }
-  // }
-
-  // .tab-check:checked {
-  //   + .tab-label {
-  //     border: 2px solid #fbb710;
-  //     &::after {
-  //       transform: rotate(90deg)
-  //     }
-  //   }
-  //   ~ .tab-content {
-  //     max-height: 100vh;
-  //     padding: 10px 0px;
-  //   }
-  // }
-
+  
 
   // Main Styles
   .menu-title {
     border-bottom: 1px solid #131212;
-    border-bottom: 1px solid #fbb710;
     width: 8vw;
     font-style: italic;
-    margin-top: 70px;
+    // margin-top: 70px; // desktop
+    margin-top: 20px; // mobile
     margin-bottom: 20px;
     font-weight: bold;
     font-size: 18px;
@@ -74,7 +29,6 @@
   }
   .types-title {
     border-bottom: 1px solid #131212;
-    border-bottom: 1px solid #fbb710;
     width: 8vw;
     font-size: 18px;
     font-style: italic;
@@ -83,7 +37,6 @@
     display: block;
   }
   .types-menu {
-    
     ul {
       list-style: none;
       a{
@@ -101,12 +54,11 @@
   .brands-menu {
     .input-brands-menu{
       margin-bottom: 25px;
-      margin-right: 10px;
+      margin-right: 5px;
     }
   }
 
   .colors-menu {
-    
     ul {
       display: flex;
       list-style: none;
@@ -216,6 +168,93 @@
     }
     span {
       font-size: 12px;
+    }
+  }
+}
+
+// Responsiveness
+
+
+@include breakpoint('mobile') {
+  .shop-menu {
+    position: sticky;
+    top: 0px;
+    max-height: 100vh;
+    padding: 90px 0px 0px 5px;
+    margin: 0;
+    width: 31%;
+    overflow: scroll;
+    .menu-title, .types-title {
+      font-size: 15px;
+      width: 70%;
+      border-bottom: 2px solid #131212;
+    }
+    .colors-menu {
+      ul {
+        .circle-colors-menu {
+          cursor: pointer;
+          margin: 0px 15px 10px 0px;
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+    .slider-menu {
+      width: 80%;
+    }
+    .tab {
+      // overflow: hidden;
+      margin-top: 20px;
+      &-label {
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        padding: 10px 0px;
+        margin: 0 0 25px 0px;
+        background: transparent;
+        // border-bottom: 2px solid #131212;
+        cursor: pointer;
+        &::after {
+          content: "\276F";
+          display: inline-block;
+          width: 15px;
+          height: 25px;
+          transition: all .35s;
+          padding-left: 25px;
+        }
+      }
+      &-content {
+        overflow: scroll;
+        max-height: 0;
+        color: #606060;
+        transition: all .35s;
+        font-size: 0.85rem;
+        a {
+          font-size: 0.85rem;
+          font-weight: 600;
+        }
+        label{
+          // font-size: 0.85rem;
+          font-weight: 600;
+        }
+      }
+    }
+    .tab-check:checked {
+      + .tab-label {
+        border-bottom: 2px solid #fbb710;
+        &::after {
+          color: #fbb710;
+          margin: auto 0px auto 25px;
+          max-height: 100vh;
+          padding: 0px 0px 0px 0px;
+          transform: rotate(90deg);
+        }
+      }
+      ~ .tab-content {
+        max-height: 100vh;
+        padding: 10px 0px;
+      }
     }
   }
 }

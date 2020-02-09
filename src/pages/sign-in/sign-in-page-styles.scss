@@ -1,3 +1,4 @@
+@import '../../assets/styles/responsive';
 
 .sign-in {
   width: 30vw;
@@ -7,11 +8,11 @@
     font-size: 26px;
   }
   form {
-    margin: 50px 0px 15px 0px;
+    margin: 30px 0px 15px 0px;
     
     .custom-button{
       width: 70%;
-      margin-top: 10px;
+      margin-top: 40px;
       padding: 18px 50px
     }
     input {
@@ -23,16 +24,27 @@
       height: calc(1.5em + .75rem + 2px);
       padding: .375rem .75rem;
       font-size: 1rem;
-      font-weight: 400;
-      line-height: 1.5;
-      color:#495057;
+    }
+    label {
+      color:#9c9d9e;
+      display: block;
     }
   }
 
-  h5 {
-    a {
+  h5 > a{
       text-decoration: none;
       color: #fbb710;
+      font-size: 15px;
+      font-weight: bold;
+  }
+}
+
+// Mobile 
+@include breakpoint('mobile'){
+  .sign-in {
+    width: 90vw;
+    h5 > a {
+      font-weight: normal;
     }
   }
 }

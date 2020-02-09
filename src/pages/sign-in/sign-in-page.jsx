@@ -5,7 +5,7 @@ import CustomButton from '../../components/custom-button/customButton-component'
 import {signInWithGoogle} from '../../firebase/firebase.utils'
 import {Link} from 'react-router-dom'
 
-import './sign-in-styles.scss'
+import './sign-in-page-styles.scss'
 
 class SignInForm extends React.Component {
   constructor(props){
@@ -38,7 +38,7 @@ class SignInForm extends React.Component {
             name="username"
             type="text"
             value={this.state.username}
-            placeholder="username "
+            label="username "
             required
             handleChange={this.handleChange}
           />
@@ -48,7 +48,7 @@ class SignInForm extends React.Component {
             name="password"
             type="password"
             value={this.state.password}
-            placeholder="password"
+            label="password"
             required
             handleChange={this.handleChange}
           />
