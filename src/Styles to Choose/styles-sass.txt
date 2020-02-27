@@ -1,0 +1,38 @@
+converter o header para class pq com state fica mais fácil de comandar as ações do hamburger
+
+• alterar o slider e mostrar o valor que tá
+
+• abrir um accordion, fechar o que estava aberto
+
+• tipo o link muda, fecha o menu (pq quer dizer que clicou pra algum lugar)
+
+• quando tiver função do carrinho, deixar tipo uma sacolinha ou um cart msm. 
+	→ Vai mostrar a quantidade de itens 
+	→ e clicando abre modal com os itens nele
+	→ podendo até fazer checkout no modal
+	
+	
+	
+Select mt bom e fácil
+	
+yarn add react-select	
+	
+import React from 'react';
+import Select from 'react-select';
+import makeAnimated from 'react-select/animated';
+import { colourOptions } from './docs/data';
+
+
+const animatedComponents = makeAnimated();
+
+export default function AnimatedMulti() {
+  return (
+    <Select
+      closeMenuOnSelect={false}
+      components={animatedComponents}
+      defaultValue={[colourOptions[4], colourOptions[5]]}
+      isMulti
+      options={colourOptions}
+    />
+  );
+}
