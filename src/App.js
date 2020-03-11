@@ -59,7 +59,7 @@ class App extends React.Component {
     const product = 'product'
     return (
       <div className="master-container">
-        <Header currentUser={this.state.currentUser}/>
+        <Header />
         <Switch>
           <Route exact path='/' render={() => <HomePage />}/>
           <Route exact path={`/shop/:${section}`} render={() => <ShopPage />} />
