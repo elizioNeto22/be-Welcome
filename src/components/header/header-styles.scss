@@ -1,0 +1,273 @@
+@import "../../assets/styles/responsive";
+@import '../../assets//styles/colors';
+
+
+@mixin transparent-button ($btn) {
+  @if $btn == 'signIn' or $btn == 'signOut'{
+    border: 2px solid $dark-black;
+    &:hover {
+      background-color: $dark-black;
+      color: $white-text;
+      // transition-property: hover;
+      transition-timing-function: ease;
+      transition-duration: 0.5s;
+    }
+  }
+  @else {
+    border: 2px solid $yellow;
+    &:hover {
+      background-color: $hover-color;
+      color: $dark-black;
+      // transition-property: hover;
+      transition-timing-function: ease;
+      transition-duration: 0.5s;
+    }
+  }
+}
+
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  // width: 15vw;
+  z-index: 100;
+  height: 100vh;
+  padding: 50px 30px 50px 90px;
+  margin: 0;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: sticky;
+  top: 0px;
+  .hamburger-container {
+    display: none;
+  }
+  
+  .logo {
+    background-image: url("../../assets/icons/logo.png");
+    width: 100%;
+    height: 90px;
+    background-position: center;
+    background-size: cover;
+  }
+  
+
+  .nav-bar {
+    display: flex;
+    flex-direction: column;
+
+      .nav-option {
+        padding: 10px 0;
+        font-size: 1.25rem;
+        text-decoration: none;
+        color: $dark-black;
+        position: relative;
+
+          &:hover{
+            color: $hover-color;
+            transition-duration: 0.4s;
+            
+            &::before {
+                z-index: 10;
+                content: '';
+                width: 30px;
+                height: 3px;
+                position: absolute;
+                top: 47%;
+                left: -35%;
+                background-color: $yellow;
+              }
+          }
+    }    
+  }
+
+  .btn-group {
+    display: flex;
+    flex-direction: column;
+    .sign-button {
+      cursor: pointer;
+      overflow: hidden;
+      font-size: 18px;
+      margin: 0px 0px 15px;
+      padding: 0px 7px;
+      border: none;
+      height: 55px;
+      width: 160px;
+      background-color: transparent;
+      color: $dark-black;
+    }
+
+    .sign-IN-button {
+      @include transparent-button('signIn');
+    }
+    
+    .sign-UP-button {
+      @include transparent-button('signUp')
+    }
+    
+    // .sign-OUT-button {}
+  }
+
+  .nav-icons {
+    margin: 0px 5px;
+      .icon {
+        padding: 10px 5px;
+        &:hover {
+          cursor: pointer;
+          color: $hover-color;
+          transition-duration: 0.37s;
+          .cart-count {color: $dark-black;}
+        }
+      }
+      .icon-cart {
+        list-style-position: inside;
+        list-style-image: url('../../assets/icons/cart.png');
+        list-style-type: disc;
+      }
+      .icon-fav {
+        list-style-position: inside;
+        list-style-image: url('../../assets/icons/favorites.png');
+        list-style-type: disc;
+      }
+      .icon-search {
+        list-style-position: inside;
+        list-style-image: url('../../assets/icons/search.png');
+        list-style-type: disc;
+      }
+  }
+}
+
+
+// Responsiveness
+
+@include breakpoint('mobile') {
+  // existing styles from bigger screens
+  .header-container {
+    z-index: 50;
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0;
+    .logo, .nav-bar, .btn-group, .nav-icons {
+      display: none;
+    }
+
+    // new styles for this screen
+    // Hamburger Menu
+    .hamburger-container {
+      display: initial;
+      .burger-wrapper {
+        // z-index: 50;
+        position: absolute;
+        // top: 0;
+        // width: 90px;
+        // height: 70px;
+        padding: 40px 40px 60px 40px;
+        
+        .hamburger {
+          background: $yellow;
+          width: 45px;
+          height: 5px;
+          position: relative;
+          transition: background 10ms 300ms ease;
+          transform: translateY(5px*4);
+          
+          &:before, &:after {
+            transition: top 300ms 350ms ease,
+            transform 300ms 50ms ease;
+            position: absolute;
+            background: $yellow;
+            width: 45px;
+            height: 5px;
+            content: '';
+          }
+          &:before {
+            top: 4px*-3;
+          }
+          &:after {
+            top: 4px*3;
+          }
+          // Hamburger Content
+          .tab-content {
+            max-height: 0;
+            visibility: hidden;
+            // width: 60vw;
+            z-index: 20;
+            background-color: $dark-black;
+            color: $yellow;
+            li {
+              width: 100%;
+              list-style: none;
+              opacity: 0;
+              transition-duration: 350ms;
+              a {
+                text-decoration: none;
+                color: $yellow;
+                color: $white-text;
+                color: $dark-black;
+              }
+            }
+          }
+        }
+      }
+      
+      .menu-trigger:checked {
+        ~ .burger-wrapper {
+          .hamburger {
+            background: transparent;
+            &::after, &::before {
+              transition: top 300ms 50ms ease,
+              transform 300ms 350ms ease;
+              top: 0;
+            }
+            // Hamburger Content
+            .tab-content {
+              visibility: visible;
+              max-height: 100vh;
+              width: 80vw;
+              z-index: 20;
+              background-color: #e9e9e9;
+              box-shadow: 10px 8px 10px 1px rgba(0, 0, 0, 0.450), 10px 8px 10px 1px rgba(0,0,0,0.450), 10px 10px 20px 1px rgba(0,0,0,0.450);
+              border-radius: 1.5px;
+              text-align: center;
+              li {
+                transition-duration: 0.5s;
+                transition-timing-function: linear;
+                opacity: 1;
+                list-style: none;
+                padding: 20px 0px;
+                  &:first-child {
+                    padding-top: 35px;
+                  }
+                  a {
+                    font-weight: normal;
+                    font-weight: bold;
+                    text-decoration: none;
+                  }
+                }
+            }
+            &:before {
+              transform: rotate(45deg);
+            }
+            &:after {
+              transform: rotate(-45deg);
+            }
+          }
+        }
+      }     
+      .hidden {
+        display: none;
+      }
+    }
+
+    // sign in / out buttons
+    .sign-button {
+      font-weight: normal;
+      color: $dark-black;
+      background: none;
+      border: none;
+    }    
+    .icon {
+      font-weight: normal;
+      color: $dark-black;
+    }
+  }
+}

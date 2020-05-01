@@ -1,0 +1,17 @@
+@import '../../assets/styles/responsive';
+
+.menu-item-container {
+  height: 150vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+}
+
+// Mobile
+
+@include breakpoint('mobile') {
+  height: 150vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  // gap: 5px;
+}

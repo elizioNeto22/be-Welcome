@@ -1,0 +1,42 @@
+@import '../../assets/styles/colors';
+
+@mixin button-default-style {
+  cursor: pointer;
+  display: inline-block;
+  padding: 18px 36px;
+  background-color: transparent;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-weight: 400;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border: 1px solid
+}
+
+
+.google-sign-in {
+  @include button-default-style();
+  width: 70%;
+  margin-top: 10px;
+  padding: 18px 50px;
+  border: 1px solid #DB4437;
+  background-color: transparent;
+  color: #DB4437;
+
+    &:hover{
+      background-color: #DB4437;
+      color: $white-text;
+    }
+}
+
+.custom-button {
+  @include button-default-style();
+  border: 1px solid $yellow;
+  color: $text-color;
+
+    &:hover{
+      background-color: $yellow;
+      color: $white-text;
+    }
+}

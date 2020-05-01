@@ -1,0 +1,13 @@
+@import '../../assets/styles/responsive';
+
+
+.homepage-container {
+  width: 70vw;
+}
+
+
+@include breakpoint('mobile'){
+  .homepage-container {
+    width: 100vw;
+  }
+}

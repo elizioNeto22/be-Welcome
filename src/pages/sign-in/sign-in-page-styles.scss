@@ -1,0 +1,50 @@
+@import '../../assets/styles/responsive';
+
+.sign-in {
+  width: 30vw;
+  text-align: center;
+  margin: auto auto;
+  h3 {
+    font-size: 26px;
+  }
+  form {
+    margin: 30px 0px 15px 0px;
+    
+    .custom-button{
+      width: 70%;
+      margin-top: 40px;
+      padding: 18px 50px
+    }
+    input {
+      border: 0px solid transparent;
+      border-bottom: 1px solid#ddd;
+      border-radius: 0;
+      margin: 10px;
+      width: 80%;
+      height: calc(1.5em + .75rem + 2px);
+      padding: .375rem .75rem;
+      font-size: 1rem;
+    }
+    label {
+      color:#9c9d9e;
+      display: block;
+    }
+  }
+
+  h5 > a{
+      text-decoration: none;
+      color: #fbb710;
+      font-size: 15px;
+      font-weight: bold;
+  }
+}
+
+// Mobile 
+@include breakpoint('mobile'){
+  .sign-in {
+    width: 90vw;
+    h5 > a {
+      font-weight: normal;
+    }
+  }
+}
