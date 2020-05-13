@@ -1,4 +1,4 @@
-@import "../../assets/styles/colors";
+@import '../../assets/styles/colors';
 @import '../../assets/styles/_responsive';
 
 .shop-item {
@@ -13,17 +13,17 @@
   .shop-item-info {
     display: flex;
     justify-content: space-between;
-    align-items: center ;
+    align-items: center;
     margin: 20px 0 0px 0;
 
     .shop-item-info-text {
-      .info-line{
+      .info-line {
         width: 80px;
         height: 3px;
         margin: 0px 0 10px 0;
         background-color: $yellow;
       }
-      p{
+      p {
         font-size: 24px;
         color: $yellow;
         margin: 0px 0 5px 0;
@@ -36,31 +36,24 @@
     }
 
     .shop-item-features {
-      .cart {
-        width: 21px;
-        height: 20px;
-        background-image: url(../../assets/icons/cart.png);
-        background-position: center;
-        background-size: cover;
-        float: right;
-        margin-top: 5px;
-      }
-      .rating {
-        display: flex;
-        margin-bottom: 5px;
-        .star {
-          width: 15px;
-          height: 15px;
-          background-image: url(../../assets/icons/icon-star.png);
-          background-position: center;
-          background-size: cover;
+      svg {
+        cursor: pointer;
+        width: 40px;
+        height: 45px;
+        margin: 5px 6px 5px 0px;
+        fill: none;
+        stroke-width: 10;
+        stroke: #252525;
+        polygon {
+          stroke: none;
+          fill: $yellow;
         }
       }
     }
   }
 }
 
-// Mobile 
+// Mobile
 @include breakpoint('mobile') {
   .shop-item {
     width: 90%;
