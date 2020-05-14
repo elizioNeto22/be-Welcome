@@ -4,7 +4,8 @@ import { connect } from 'react-redux'
 
 import { userSignOut } from '../../firebase/firebase.utils'
 import CustomButton from '../../components/custom-button/customButton-component'
-import { ReactComponent as CartIcon } from '../../assets/icons/cart-icon.svg'
+import CartIcon from '../cart-icon/cart-icon.component'
+import CartMenu from '../cart-menu/cart-menu.component'
 
 import './header-styles.scss'
 import './header-styles-mobile.scss'
@@ -96,13 +97,11 @@ const Header = ({ currentUser }) => (
     </div>
 
     <div className="nav-icons">
-      <div className="icon">
-        <CartIcon />
-        <span className="cart-count">0</span>
-      </div>
+      <CartIcon />
       <div className="icon icon-fav">FAVOURITE</div>
       <div className="icon icon-search">SEARCH</div>
     </div>
+    <CartMenu />
   </div>
 )
 

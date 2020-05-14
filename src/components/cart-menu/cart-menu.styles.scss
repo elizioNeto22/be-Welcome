@@ -1,0 +1,22 @@
+.cart-menu {
+  position: absolute;
+  left: 50px;
+  top: 0;
+  height: 100vh;
+  width: 450px;
+  z-index: 15;
+  padding: 20px 50px;
+  background-color: #facb55;
+
+  .cart-item-container {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cart-total {
+  }
+  .close-menu {
+    cursor: pointer;
+  }
+}
