@@ -41,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "redux-devtools-extension": "^2.13.8",
     "resolve-url-loader": "^3.1.1"
   }
 }
