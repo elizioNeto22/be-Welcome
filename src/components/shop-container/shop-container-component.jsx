@@ -4,10 +4,12 @@ import ShopItem from '../shop-item/shopItem-component'
 
 import './shop-container-styles.scss'
 
-const ShopContainer = ({items}) => {
+const ShopContainer = ({ items }) => {
   return (
     <div className="shop-container">
-      {items.map(({id, ...otherProps}) => <ShopItem key={id} {...otherProps}/>)}
+      {items.map((item) => (
+        <ShopItem key={item.id} item={item} />
+      ))}
     </div>
   )
 }
