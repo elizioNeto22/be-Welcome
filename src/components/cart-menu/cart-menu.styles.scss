@@ -7,8 +7,10 @@
   width: 450px;
   z-index: 15;
   padding: 20px 50px;
-  transition: 1s;
   background-color: #facb55;
+  transform: 1s;
+  animation-duration: 1s;
+  transition: 1s;
 
   .close-icon {
     display: inline-block;

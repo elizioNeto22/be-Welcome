@@ -1,7 +1,5 @@
 import React from 'react'
 
-import './cart-expand-header.styles.scss'
-
 const CartExpandHeader = () => {
   return (
     <div className="checkout-header">

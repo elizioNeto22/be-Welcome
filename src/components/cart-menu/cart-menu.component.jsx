@@ -11,11 +11,12 @@ import {
 import { toggleCart, toggleExpand } from '../../redux/cart/cart.actions'
 
 import CartItem from '../cart-item/cart-item.component'
-import CustomButton from '../custom-button/customButton-component'
+import CartTotal from '../cart-total/cart-total.component'
 import CartExpandHeader from '../cart-expand-header/cart-expand-header.component'
+import CustomButton from '../custom-button/customButton-component'
 
 import './cart-menu.styles.scss'
-import './cart-menu-expand.styles.scss'
+import './cart-expand.styles.scss'
 
 const CartMenu = ({
   cartItems,
@@ -28,14 +29,23 @@ const CartMenu = ({
   const renderCartItems = () =>
     cartItems.map((item) => <CartItem key={item.id} item={item} />)
 
+  const toggleBothCarts = () => {
+    if (cartExpand) {
+      toggleExpand()
+      toggleCart()
+    } else toggleCart()
+  }
+
   return (
     <div className={`cart-menu ${cartExpand}`}>
-      <div className="close-icon" onClick={() => toggleCart()}>
+      <div className="close-icon" onClick={() => toggleBothCarts()}>
         &#10005;
       </div>
 
+      {/* Header Sections */}
       {cartExpand ? <CartExpandHeader /> : null}
 
+      {/* Items Section */}
       <div className="cart-item-container">
         {cartItems.length ? (
           renderCartItems()
@@ -44,10 +54,17 @@ const CartMenu = ({
         )}
       </div>
 
-      <div className="cart-total">
-        <span>Total: </span>
-        <span>${cartTotal}</span>
-      </div>
+      {/* Total Section */}
+      {cartExpand ? (
+        <CartTotal total={cartTotal} />
+      ) : (
+        <div className="cart-total">
+          <span>Total: </span>
+          <span>${cartTotal}</span>
+        </div>
+      )}
+
+      {/* Buttons Section */}
       <div className="buttons-container">
         <CustomButton
           onClick={(e) => {
