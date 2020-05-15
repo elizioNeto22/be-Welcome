@@ -20,7 +20,13 @@
     padding: 0px 20px 0px 30px;
     font-size: 14px;
     span {
-      font-size: 10px;
+      font-size: 8px;
+    }
+    .quantity {
+      font-size: 14px;
+    }
+    .quantity-icon {
+      display: none;
     }
 
     .trash {

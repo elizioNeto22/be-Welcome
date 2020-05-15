@@ -1,9 +1,9 @@
 import { cartTypes } from './cart.types'
-import { addItem, deleteItem } from './cart.utils'
+import { addItem, deleteItem, removeUnity } from './cart.utils'
 
 const INITIAL_STATE = {
-  hidden: false, // true
-  expand: true, //false
+  hidden: false,
+  expand: true,
   cartItems: [],
 }
 
@@ -28,6 +28,11 @@ const cartReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         cartItems: deleteItem(action.payload, state.cartItems),
+      }
+    case cartTypes.REMOVE_UNITY:
+      return {
+        ...state,
+        cartItems: removeUnity(action.payload, state.cartItems),
       }
     default:
       return state

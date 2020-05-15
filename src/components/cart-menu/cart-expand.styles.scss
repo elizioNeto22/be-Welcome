@@ -73,7 +73,16 @@
         padding: 0px 20px 0px 0px;
         font-size: 16px;
         span {
-          font-size: 12px;
+          font-size: 8px;
+        }
+        .quantity {
+          font-size: 14px;
+        }
+        .quantity-icon {
+          cursor: pointer;
+          display: initial;
+          font-size: 20px;
+          padding: 0 5px;
         }
 
         .trash {
