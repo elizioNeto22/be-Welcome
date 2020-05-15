@@ -1,16 +1,10 @@
 import { cartTypes } from './cart.types'
+import { addItem, deleteItem } from './cart.utils'
 
 const INITIAL_STATE = {
-  hidden: true,
-  cartItems: [
-    {
-      id: 1,
-      name: 'Chair 01',
-      price: 25,
-      imageUrl: '/imgs/sections/chairs/chair-1.jpg',
-      quantity: 1,
-    },
-  ],
+  hidden: false, // true
+  expand: true, //false
+  cartItems: [],
 }
 
 const cartReducer = (state = INITIAL_STATE, action) => {
@@ -20,10 +14,20 @@ const cartReducer = (state = INITIAL_STATE, action) => {
         ...state,
         hidden: !state.hidden,
       }
+    case cartTypes.EXPAND_CART:
+      return {
+        ...state,
+        expand: !state.expand,
+      }
     case cartTypes.ADD_ITEM:
       return {
         ...state,
-        cartItems: [...state.cartItems, { ...action.payload, quantity: 1 }],
+        cartItems: addItem(action.payload, state.cartItems),
+      }
+    case cartTypes.DELETE_ITEM_FROM_CART:
+      return {
+        ...state,
+        cartItems: deleteItem(action.payload, state.cartItems),
       }
     default:
       return state
