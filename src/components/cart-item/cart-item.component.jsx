@@ -11,9 +11,12 @@ const CartItem = ({ item }) => {
       <img src={imageUrl} alt="" />
       <div className="item-info">
         <p>{name}</p>
-        <p>{quantity}</p>
-        <p>{price}</p>
-        <TrashIcon />
+        <p>
+          <span>&#10005; </span>
+          {quantity}
+        </p>
+        <p>${price}</p>
+        <TrashIcon item={item} />
       </div>
     </div>
   )

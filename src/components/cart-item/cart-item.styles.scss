@@ -1,18 +1,16 @@
 .cart-item {
   position: relative;
   display: flex;
-  border-radius: 3px;
   margin: 15px 0px;
-  box-shadow: 0px 5px 5px 0px #00000021;
+  transition: 0.5s;
+  box-shadow: 0px 5px 5px 0px #00000018;
   &:hover {
     box-shadow: 0px 5px 5px 0px #0000006f;
-    transition-duration: 0.5s;
   }
 
   img {
     height: 125px;
-    width: 125px;
-    border-radius: 3px;
+    min-width: 125px;
   }
 
   .item-info {
@@ -20,7 +18,10 @@
     max-height: 110px;
     width: 100%;
     padding: 0px 20px 0px 30px;
-    font-size: 13px;
+    font-size: 14px;
+    span {
+      font-size: 10px;
+    }
 
     .trash {
       cursor: pointer;
@@ -29,8 +30,12 @@
       position: absolute;
       right: 10px;
       bottom: 13px;
-      &:active {
+      transition: 0.3s;
+      &:hover {
         fill: #ffffff;
+      }
+      &:active {
+        fill: #a07300;
       }
     }
 
