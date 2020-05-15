@@ -1,8 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { createStructuredSelector } from 'reselect'
 
 import { userSignOut } from '../../firebase/firebase.utils'
+import { selectHiddenCart } from '../../redux/cart/cart.selectors'
+import { selectCurrentUser } from '../../redux/user/user.selectors'
+
 import CustomButton from '../../components/custom-button/customButton-component'
 import CartIcon from '../cart-icon/cart-icon.component'
 import CartMenu from '../cart-menu/cart-menu.component'
@@ -11,7 +15,7 @@ import './header-styles.scss'
 import './header-styles-mobile.scss'
 import '../custom-button/custom-button-styles.scss'
 
-const Header = ({ currentUser }) => (
+const Header = ({ currentUser, hiddenCart }) => (
   <div className="header-container">
     {/* Responsive menu */}
     <div className="hamburger-container">
@@ -101,10 +105,13 @@ const Header = ({ currentUser }) => (
       <div className="icon icon-fav">FAVOURITE</div>
       <div className="icon icon-search">SEARCH</div>
     </div>
-    <CartMenu />
+    {hiddenCart ? null : <CartMenu />}
   </div>
 )
 
-const mapStateToProps = (state) => ({ currentUser: state.user.currentUser })
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
+  hiddenCart: selectHiddenCart,
+})
 
 export default connect(mapStateToProps)(Header)
