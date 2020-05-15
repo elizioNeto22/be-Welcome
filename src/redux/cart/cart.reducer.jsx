@@ -2,8 +2,8 @@ import { cartTypes } from './cart.types'
 import { addItem, deleteItem, removeUnity } from './cart.utils'
 
 const INITIAL_STATE = {
-  hidden: false,
-  expand: true,
+  hidden: true,
+  expand: false,
   cartItems: [],
 }
 
