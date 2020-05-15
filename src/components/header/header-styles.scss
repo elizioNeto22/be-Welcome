@@ -12,13 +12,14 @@
       transition-duration: 0.5s;
     }
   } @else {
-    border: 2px solid $yellow;
+    border: 3px double $yellow;
+    transition-timing-function: ease;
+    transition-duration: 0.5s;
     &:hover {
-      background-color: $hover-color;
+      background-color: #fbc12f;
       color: $dark-black;
+      border-color: $white-text;
       // transition-property: hover;
-      transition-timing-function: ease;
-      transition-duration: 0.5s;
     }
   }
 }
@@ -27,7 +28,7 @@
   display: flex;
   flex-direction: column;
   // width: 15vw;
-  z-index: 100;
+  z-index: 10;
   height: 100vh;
   padding: 50px 30px 50px 90px;
   margin: 0;

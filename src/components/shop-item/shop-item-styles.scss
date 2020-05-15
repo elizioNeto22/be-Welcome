@@ -45,8 +45,14 @@
         stroke-width: 10;
         stroke: #252525;
         polygon {
-          stroke: none;
+          stroke: $yellow;
           fill: $yellow;
+        }
+        &:active {
+          polygon {
+            stroke: $yellow;
+            fill: $white-text;
+          }
         }
       }
     }

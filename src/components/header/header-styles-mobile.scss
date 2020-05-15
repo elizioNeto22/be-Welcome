@@ -20,12 +20,9 @@
     .hamburger-container {
       display: initial;
       .burger-wrapper {
-        // z-index: 50;
-        position: absolute;
-        // top: 0;
-        // width: 90px;
-        // height: 70px;
-        padding: 40px 40px 60px 40px;
+        position: fixed;
+        padding: 0px 40px 60px 10px;
+        top: 30px;
 
         .hamburger {
           background: $yellow;
