@@ -1,48 +1,33 @@
 import React from 'react'
-import {withRouter} from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { createStructuredSelector } from 'reselect'
 
+import { selectShop } from '../../redux/shop/shop.selectors'
 import ShopContainer from '../../components/shop-container/shop-container-component'
 import ShopMenu from '../../components/shop-menu/shop-menu-component'
-import SHOP_DATA from './shop_data'
 
 import './shopPage-styles.scss'
 
-class ShopPage extends React.Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      departament: SHOP_DATA,
-      actualCollection: props
-    }
+const ShopPage = ({ shop_data, match }) => {
+  const renderCollection = () => {
+    return shop_data.map(({ id, routeName, items }) => {
+      const title = match.params['title']
+      return routeName === title ? (
+        <ShopContainer key={id} items={items} />
+      ) : null
+    })
   }
-
-
-  renderCollection = () => {
-    const title = this.state.actualCollection.match.params['title']
-    return this.state.departament.map(({id, routeName, items}) => 
-    routeName === title ? <ShopContainer key={id} items={items} /> : null)
-  }
-
-
-  componentDidUpdate(prevProps) {
-    if (this.props !== prevProps){
-      this.setState({actualCollection: this.props})
-    }
-  }
-  
-  
-  render() {
-    return (
-      <div className="shopPage-container">
-        {/* <div onClick={() => console.log(this.props.match)}>history</div> */}
-        <ShopMenu collection={this.state.departament} renderCollection={this.renderCollection} />
-        {this.renderCollection()}
-      </div>
-    )
-  }
+  return (
+    <div className="shopPage-container">
+      <ShopMenu collection={shop_data} />
+      {renderCollection()}
+    </div>
+  )
 }
 
+const mapStateToProps = createStructuredSelector({
+  shop_data: selectShop,
+})
 
-
-
-export default withRouter(ShopPage)
+export default withRouter(connect(mapStateToProps)(ShopPage))

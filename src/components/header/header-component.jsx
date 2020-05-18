@@ -19,9 +19,9 @@ const Header = ({ currentUser, hiddenCart }) => (
   <div className="header-container">
     {/* Responsive menu */}
     <div className="hamburger-container">
-      <input class="menu-trigger hidden" id="togglenav" type="checkbox" />
-      <label class="burger-wrapper" for="togglenav">
-        <div class="hamburger">
+      <input className="menu-trigger hidden" id="togglenav" type="checkbox" />
+      <label className="burger-wrapper" htmlFor="togglenav">
+        <div className="hamburger">
           <div className="tab-content">
             <ul>
               <li>
