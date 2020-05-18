@@ -12,10 +12,10 @@
 
 #### User cart
 
-> See just the essential with an mini-cart or expand it to have more options
-> Keep your items after close the window or open another tab
-> Add or remove item by unity or all together
-> All features like total, payment options and items count will be updated if the cart change
+> - See just the essential with an mini-cart or expand it to have more options
+> - Keep your items after close the window or open another tab
+> - Add or remove item by unity or all together
+> - All features like total, payment options and items count will be updated if the cart change
 
 ####
 
