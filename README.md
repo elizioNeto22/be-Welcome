@@ -4,9 +4,11 @@
 
 ---
 
-- [Features](#user-cart)
-- [Technologies](#technologies)
-- [Contact](#contact)
+- [You can checkout the progress here: **Cyclone Store**](#you-can-checkout-the-progress-here-cyclone-store)
+  - [User cart](#user-cart)
+  - [Sign In / Sign Up](#sign-in--sign-up)
+  - [Technologies](#technologies)
+  - [Contact](#contact)
 
 #### User cart
 
@@ -17,7 +19,7 @@
 
 ####
 
-![cartGIF](http://g.recordit.co/K2mrRjCTNw.gif)
+![cartGIF](./src/assets/icons/ezgif.com-optimize.gif)
 
 #### Sign In / Sign Up
 
