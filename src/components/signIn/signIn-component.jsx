@@ -2,12 +2,12 @@ import React from 'react'
 
 import CustomInput from '../customInput/custom-input-component'
 import CustomButton from '../custom-button/customButton-component'
-import {signInWithGoogle} from '../../firebase/firebase.utils' 
+import { signInWithGoogle } from '../../firebase/firebase.utils'
 
 import './signIn-styles.scss'
 
 class SignInForm extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
       username: '',
@@ -19,21 +19,21 @@ class SignInForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.setState({username: '', password: ''})
+    this.setState({ username: '', password: '' })
   }
 
   handleChange = (e) => {
-    const {name,value, type, checked} = e.target
-    type === 'checkbox' ? this.setState({remember: checked})
-    : this.setState({[name]: value})
+    const { name, value, type, checked } = e.target
+    type === 'checkbox'
+      ? this.setState({ remember: checked })
+      : this.setState({ [name]: value })
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <div className="sign-in">
-        <h3>
-          Already have an account?</h3>
-          <span>Please Sign in</span>
+        <h3>Already have an account?</h3>
+        <span>Please Sign in</span>
         <form action="#" onSubmit={this.handleSubmit}>
           <CustomInput
             className="input-username"
@@ -55,15 +55,17 @@ class SignInForm extends React.Component {
             handleChange={this.handleChange}
           />
 
-          <CustomInput 
+          <CustomInput
             name="remember"
             type="checkbox"
             value={this.state.remember}
             handleChange={this.handleChange}
           />
           <div className="buttons">
-            <CustomButton  type="submit">LOG IN</CustomButton>
-            <CustomButton onClick={signInWithGoogle} isGoogleSignIn>Sign in with Google</CustomButton>
+            <CustomButton type="submit">LOG IN</CustomButton>
+            <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
+              Sign in with Google
+            </CustomButton>
           </div>
         </form>
       </div>
@@ -71,8 +73,4 @@ class SignInForm extends React.Component {
   }
 }
 
-
 export default SignInForm
-
-
-

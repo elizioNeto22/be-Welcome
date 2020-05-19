@@ -6,3 +6,8 @@ export const selectShop = createSelector(
   [selectState],
   (shop) => shop.shop_data
 )
+
+export const selectShopItems = createSelector(
+  [selectShop],
+  (shop_data) => shop_data.map
+)

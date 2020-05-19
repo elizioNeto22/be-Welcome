@@ -1,5 +1,5 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 
@@ -11,11 +11,15 @@ import './shopPage-styles.scss'
 
 const ShopPage = ({ shop_data, match }) => {
   const renderCollection = () => {
-    return shop_data.map(({ id, routeName, items }) => {
-      const title = match.params['title']
-      return routeName === title ? (
-        <ShopContainer key={id} items={items} />
-      ) : null
+    return shop_data.map(({ id, routeName, ...otherProps }) => {
+      return (
+        <Route
+          key={id}
+          exact
+          path={`/shop/${routeName}`}
+          render={() => <ShopContainer key={id} {...otherProps} />}
+        />
+      )
     })
   }
   return (
