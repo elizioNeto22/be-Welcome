@@ -14,6 +14,7 @@ import CartItem from '../cart-item/cart-item.component'
 import CartTotal from '../cart-total/cart-total.component'
 import CartExpandHeader from '../cart-expand-header/cart-expand-header.component'
 import CustomButton from '../custom-button/customButton-component'
+import StripeCheckoutButton from '../stripe-button/stripe-button.component'
 
 import './cart-menu.styles.scss'
 import './cart-expand.styles.scss'
@@ -71,16 +72,7 @@ const CartMenu = ({
             toggleExpand()
           }}
         >
-          {cartExpand ? 'Back' : 'View cart'}
-        </CustomButton>
-
-        <CustomButton
-          onClick={(e) => {
-            history.push('/checkout')
-            toggleCart()
-          }}
-        >
-          Checkout
+          {cartExpand ? 'Back' : 'Expand cart'}
         </CustomButton>
       </div>
     </div>
