@@ -7,6 +7,7 @@ import { setCurrentUser } from './redux/user/userActions'
 import Header from './components/header/header-component'
 import HomePage from './pages/homepage/homepage-component'
 import ShopPage from './pages/shop/shopPage-component'
+import CheckoutPage from './pages/checkout-page/checkout-page.component'
 import ProductPage from './pages/product-page/productPage-component'
 import SignInForm from './pages/sign-in/sign-in-page'
 import SignUpForm from './pages/sign-up/sign-up-page'
@@ -54,6 +55,7 @@ class App extends React.Component {
         <Header />
         <Switch>
           <Route exact path="/" render={() => <HomePage />} />
+          <Route exact path="/checkout" render={() => <CheckoutPage />} />
           <Route exact path={`/shop/:${section}`} render={() => <ShopPage />} />
           <Route
             path={`/shop/:${section}/:${product}`}
