@@ -128,8 +128,8 @@
     flex-direction: column;
     position: absolute;
     bottom: 50px;
-    width: 30%;
-    right: 90px;
+    width: 33.3%;
+    right: 60px;
     .custom-button {
       // text-align: center;
       width: 90%;
@@ -143,9 +143,6 @@
       &:hover {
         box-shadow: 0px 5px 5px 0px #00000040;
       }
-    }
-    :last-child {
-      display: none;
     }
   }
 }
