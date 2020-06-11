@@ -37,8 +37,8 @@
 | redux-persist      | ✅    |
 | firebase/auth      | ✅    |
 | firebase/firestore | ✅    |
-| nested routing     | ⬜    |
-| stripe payment     | ⬜    |
+| nested routing     | ✅    |
+| stripe payment     | ✅    |
 | styled components  | ⬜    |
 | redux + firebase   | ⬜    |
 | asynchronous redux | ⬜    |
