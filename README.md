@@ -5,10 +5,10 @@
 ---
 
 - [You can checkout the progress here: **Cyclone Store**](#you-can-checkout-the-progress-here-cyclone-store)
-  - [User cart](#user-cart)
-  - [Sign In / Sign Up](#sign-in--sign-up)
-  - [Technologies](#technologies)
-  - [Contact](#contact)
+    - [User cart](#user-cart)
+    - [Sign In / Sign Up](#sign-in--sign-up)
+    - [Technologies](#technologies)
+    - [Contact](#contact)
 
 #### User cart
 
@@ -19,7 +19,8 @@
 
 ####
 
-![cartGIF](./src/assets/icons/ezgif.com-optimize.gif)
+![cartGIF](./src/assets/icons/ezgif.com-optimize1.gif)
+<img src="/elizioNeto22/be-Welcome/raw/master/src/assets/icons/ezgif.com-optimize.gif" alt="cartGIF" style="max-width:100%">
 
 #### Sign In / Sign Up
 
@@ -39,8 +40,8 @@
 | firebase/firestore | ✅    |
 | nested routing     | ✅    |
 | stripe payment     | ✅    |
-| styled components  | ⬜    |
-| redux + firebase   | ⬜    |
+| styled components  | ✅    |
+| redux + firebase   | ✅    |
 | asynchronous redux | ⬜    |
 
 Used ✅ // To be used soon⬜
